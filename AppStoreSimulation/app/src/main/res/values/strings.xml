@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">App Store Simulation</string>
+    <string name="for_you">For you</string>
+    <string name="top_charts">Top charts</string>
+    <string name="other_devices">Other devices</string>
+    <string name="simulation">Simulation</string>
+    <string name="game">Game</string>
+</resources>
