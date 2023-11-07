@@ -5,4 +5,7 @@
     <string name="other_devices">Other devices</string>
     <string name="simulation">Simulation</string>
     <string name="game">Game</string>
+    <string name="games">Games</string>
+    <string name="apps">Apps</string>
+    <string name="books">Books</string>
 </resources>

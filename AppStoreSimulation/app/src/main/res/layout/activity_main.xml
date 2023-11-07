@@ -17,9 +17,46 @@
         android:background="@color/primary">
 
         <androidx.appcompat.widget.Toolbar
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_scrollFlags="scroll|enterAlways" />
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:id="@+id/open_search_view_toolbar"
+            app:layout_scrollFlags="scroll|enterAlways">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:padding="0dp"
+                android:paddingRight="10dp"
+                android:paddingEnd="10dp"
+                tools:ignore="RtlSymmetry">
+                <com.google.android.material.search.SearchBar
+                    android:layout_width="0dp"
+                    android:contentDescription="search"
+                    android:hint="Search apps &amp; games in your "
+                    app:menu="@menu/search_box_menu"
+                    android:gravity="center"
+                    android:layout_gravity="center_vertical"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"/>
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:padding="10dp"
+                    android:background="@color/primary"
+                    android:contentDescription="notification"
+                    android:src="@drawable/outline_notifications_24" />
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:background="@color/primary"
+                    android:contentDescription="Account"
+                    android:src="@drawable/round_account_circle_24" />
+            </LinearLayout>
+        </androidx.appcompat.widget.Toolbar>
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabs"
@@ -85,14 +122,24 @@
         android:id="@+id/nestedScrollView"
         android:layout_width="match_parent"
 
-        android:layout_height="wrap_content"
+        android:layout_height="681dp"
         android:contentDescription="@string/app_name"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:context=".MainActivity" />
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".MainActivity">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/list_app_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 
     <com.google.android.material.bottomappbar.BottomAppBar
@@ -100,6 +147,33 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        app:backgroundTint="#FFF0F3F8" />
+        app:backgroundTint="#FFF0F3F8">
+
+        <com.google.android.material.tabs.TabLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:tabIndicatorGravity="top"
+            android:fitsSystemWindows="true"
+            android:background="#FFF0F3F8">
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="@string/games"
+                android:icon="@drawable/baseline_videogame_asset_24"
+                android:layout_height="match_parent" />
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="@string/apps"
+                android:icon="@drawable/baseline_apps_24"
+                android:layout_height="match_parent" />
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="@string/books"
+                android:icon="@drawable/baseline_book_24"
+                android:layout_height="match_parent" />
+        </com.google.android.material.tabs.TabLayout>
+    </com.google.android.material.bottomappbar.BottomAppBar>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

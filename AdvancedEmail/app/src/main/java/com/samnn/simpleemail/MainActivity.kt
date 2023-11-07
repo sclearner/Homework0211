@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
         val emails = arrayListOf<Email>()
         repeat(100) {
             val email = Email(
-                "Hanoi@gmail.com",
+                "${Char((60..86).random())}anoi@gmail.com",
                 "Chào mừng bạn đến với thủ đô!",
                 "Hãy làm quen dần với đặc sản tắc đường",
                 Calendar.getInstance().time
